@@ -9,7 +9,8 @@ from pandas import DataFrame
 
 
 def _remove_links_figures_md(text):
-    return re.sub(r"\!?\[.*\]\(\S*\)", "", text).strip(" \n")
+    text = re.sub(r"\[.\]\(\S*\)", "", text)
+    return re.sub(r"\!\[.*\]\(\S*\)", "", text).strip(" \n")
 
 
 def _remove_extra_space_after_newline_md(text):
